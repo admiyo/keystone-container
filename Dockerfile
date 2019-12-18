@@ -12,6 +12,7 @@ ADD run-httpd.sh /run-httpd.sh
 RUN chmod -v +x /run-httpd.sh
 RUN chown keystone:keystone /etc/keystone/keystone.conf
 RUN chown keystone:keystone /var/log/keystone/keystone.log
+USER apache
 
  
 CMD ["/run-httpd.sh"]
