@@ -10,5 +10,8 @@ RUN cp /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d
  
 ADD run-httpd.sh /run-httpd.sh
 RUN chmod -v +x /run-httpd.sh
+RUN chown keystone:keystone /etc/keystone/keystone.conf
+RUN chown keystone:keystone /var/log/keystone/keystone.log
+
  
 CMD ["/run-httpd.sh"]
